@@ -1,0 +1,13 @@
+limit search results
+
+standardize all search result widths
+
+finish building out the food item dict
+
+need to prompt the user for damage (dent, rust, broken seal, leak, etc) depending on the product
+
+implement label printing
+
+center the window
+
+implement sqlite to hold organization info
