@@ -176,30 +176,7 @@ class MainPage(ctk.CTkFrame):
             text_color="white"
         ).pack()
 
-# class SearchResultsPage(ctk.CTkFrame):
-#     def __init__(self, master, results, query=None):
-#         super().__init__(master)
-#         self.configure(fg_color="white")
 
-#         if query:
-#             master.last_search_query = query
-
-#         ctk.CTkLabel(self, text="Search Results", font=ctk.CTkFont(size=20, weight="bold")).pack(pady=(20, 10))
-
-#         if results:
-#             for key, label, years, display in results:
-#                 ctk.CTkButton(
-#                     self,
-#                     text=label,
-#                     width=300,
-#                     font=ctk.CTkFont(size=14),
-#                     command=lambda k=key, y=years, l=label, d=display: master.switch_frame(ResultPage, k, l, y, d)
-#                 ).pack(pady=5)
-#         else:
-#             ctk.CTkLabel(self, text="No matching items found.", font=ctk.CTkFont(size=14)).pack(pady=10)
-
-#         master.add_back_button(self, command=master.go_back)
-#         master.add_start_over_button(self)
 class SearchResultsPage(ctk.CTkFrame):
     def __init__(self, master, results, query=None):
         super().__init__(master)
@@ -297,90 +274,6 @@ class SearchResultsPage(ctk.CTkFrame):
             self.current_page -= 1
             self.update_results()
 
-# class SearchResultsPage(ctk.CTkFrame):
-#     def __init__(self, master, results, query=None):
-#         super().__init__(master)
-#         self.configure(fg_color="white")
-
-#         if query:
-#             master.last_search_query = query
-
-#         self.master = master
-#         self.results = results
-#         self.query = query
-#         self.per_page = 8
-#         self.current_page = 0
-
-#         ctk.CTkLabel(
-#             self,
-#             text="Search Results",
-#             font=ctk.CTkFont(size=20, weight="bold")
-#         ).pack(pady=(20, 10))
-
-#         self.results_container = ctk.CTkFrame(self, fg_color="white")
-#         self.results_container.pack()
-
-#         self.nav_container = ctk.CTkFrame(self, fg_color="white")
-#         self.nav_container.pack(pady=(10, 20))
-
-#         self.prev_button = ctk.CTkButton(
-#             self.nav_container,
-#             text="<",
-#             width=30,
-#             fg_color="white",
-#             text_color="black",
-#             font=ctk.CTkFont(size=24, weight="bold"),
-#             command=self.prev_page
-#         )
-#         self.prev_button.grid(row=0, column=0, padx=5)
-
-#         self.next_button = ctk.CTkButton(
-#             self.nav_container,
-#             text=">",
-#             width=30,
-#             fg_color="white",
-#             text_color="black",
-#             font=ctk.CTkFont(size=24, weight="bold"),
-#             command=self.next_page
-#         )
-#         self.next_button.grid(row=0, column=1, padx=5)
-
-#         self.update_results()
-
-#         master.add_back_button(self, command=master.go_back)
-#         master.add_start_over_button(self)
-
-#     def update_results(self):
-#         # Clear existing widgets
-#         for widget in self.results_container.winfo_children():
-#             widget.destroy()
-
-#         start = self.current_page * self.per_page
-#         end = start + self.per_page
-#         page_results = self.results[start:end]
-
-#         for key, label, years, display in page_results:
-#             ctk.CTkButton(
-#                 self.results_container,
-#                 text=label,
-#                 width=300,
-#                 font=ctk.CTkFont(size=14),
-#                 command=lambda k=key, y=years, l=label, d=display: self.master.switch_frame(ResultPage, k, l, y, d)
-#             ).pack(pady=5)
-
-#         # Update button states
-#         total_pages = (len(self.results) - 1) // self.per_page
-#         self.prev_button.configure(state="normal" if self.current_page > 0 else "disabled")
-#         self.next_button.configure(state="normal" if self.current_page < total_pages else "disabled")
-
-#     def next_page(self):
-#         self.current_page += 1
-#         self.update_results()
-
-#     def prev_page(self):
-#         self.current_page -= 1
-#         self.update_results()
-
 
 class CategoryPage(ctk.CTkFrame):
     def __init__(self, master):
@@ -466,13 +359,14 @@ class CannedJarredPage(ctk.CTkFrame):
             )
             if not matching_key:
                 continue  # skip if key not found
+            d = food_items[matching_key].get("shelf_life_display", f"{years:.2f} years")
 
             ctk.CTkButton(
                 self,
                 text=label,
                 width=350,
                 font=ctk.CTkFont(size=14),
-                command=lambda k=matching_key, l=label, y=years: master.switch_frame(ResultPage, k, l, y)
+                command=lambda k=matching_key, l=label, d=d, y=years: master.switch_frame(ResultPage, k, l, y, d)
             ).pack(pady=4)
 
         master.add_back_button(self, command=lambda: master.switch_frame(ShelfStablePage))
@@ -489,6 +383,7 @@ class ResultPage(ctk.CTkFrame):
         print(f"subcategory: {self.subcategory}")
 
         self.shelf_life_years = shelf_life_years
+        self.shelf_life_display = shelf_life_display or f"{shelf_life_years:.2f} years"
         self.master = master
 
         ctk.CTkLabel(
@@ -616,7 +511,8 @@ class ResultPage(ctk.CTkFrame):
 
         ctk.CTkLabel(
             self,
-            text=f"Recommended Shelf Life: {self.shelf_life_years:.2f} years\n"
+            # text=f"Recommended Shelf Life: {self.shelf_life_years:.2f} years\n"
+            text=f"Recommended Shelf Life: {self.shelf_life_display}\n"
                  f"✅ Acceptable if date on package is on or after:",
             font=ctk.CTkFont(size=16),
             text_color="green",
