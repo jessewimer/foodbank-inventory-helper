@@ -26,7 +26,7 @@ class FoodbankApp(ctk.CTk):
         arrow_img = Image.open("assets/back_button.png").resize((32, 32), Image.Resampling.LANCZOS)
         self.back_icon = ctk.CTkImage(light_image=arrow_img, dark_image=arrow_img, size=(32, 32))
 
-        self.logo_path = "assets/foodbank_logo.png"
+        self.logo_path = "assets/new_fb_logo_transparent.png"
         self.show_main_page()
 
     def center_window(self, width=500, height=500):
