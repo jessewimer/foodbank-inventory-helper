@@ -58,6 +58,7 @@ class FoodbankApp(ctk.CTk):
 
         self.switch_frame(SearchResultsPage, matches, query=query)
 
+
     def load_image(self):
         if os.path.exists(self.logo_path):
             img = Image.open(self.logo_path).convert("RGBA")
@@ -65,6 +66,7 @@ class FoodbankApp(ctk.CTk):
             self.logo_img = ctk.CTkImage(light_image=img, dark_image=img, size=img.size)
             logo = ctk.CTkLabel(self.main_frame, image=self.logo_img, text="")
             logo.pack(pady=10)
+
 
     def switch_frame(self, frame_class, *args, record_history=True, **kwargs):
         if self.current_frame is not None:
@@ -78,8 +80,10 @@ class FoodbankApp(ctk.CTk):
         self.current_frame = frame_class(self, *args, **kwargs)
         self.current_frame.pack(fill="both", expand=True)
 
+
     def show_category_page(self):
         self.switch_frame(CategoryPage)
+
 
     def add_back_button(self, frame, command):
         back_btn = ctk.CTkButton(
@@ -94,6 +98,7 @@ class FoodbankApp(ctk.CTk):
             hover_color="white",
         )
         back_btn.place(relx=0.0, rely=1.0, x=20, y=-20, anchor="sw")
+
 
     def add_start_over_button(self, frame):
         start_btn = ctk.CTkButton(
@@ -110,6 +115,7 @@ class FoodbankApp(ctk.CTk):
         )
         start_btn.place(relx=1.0, rely=1.0, x=-20, y=-20, anchor="se")
 
+
     def go_back(self):
         if self.page_history:
 
@@ -118,6 +124,7 @@ class FoodbankApp(ctk.CTk):
 
         else:
             self.show_main_page()
+
 
 class MainPage(ctk.CTkFrame):
     def __init__(self, master):
@@ -314,7 +321,7 @@ class ShelfStablePage(ctk.CTkFrame):
         ctk.CTkLabel(self, text="Shelf-Stable Subcategories", font=ctk.CTkFont(size=20, weight="bold")).pack(pady=20)
 
         categories = [
-            ("Canned / Jarred", CannedJarredPage),
+            ("Canned / Jarred", ContainsTomatoesPage),
             ("Dry Goods", DryGoodsPage),
             ("Beverages", BeveragesPage),
             ("Condiments / Sauces / Syrups", CondimentsPage),
@@ -334,6 +341,45 @@ class ShelfStablePage(ctk.CTkFrame):
         master.add_start_over_button(self)
 
 
+class ContainsTomatoesPage(ctk.CTkFrame):
+    def __init__(self, master):
+        super().__init__(master)
+        self.configure(fg_color="white")
+
+        # Question text
+        ctk.CTkLabel(
+            self,
+            text="Does the item contain tomatoes?",
+            font=ctk.CTkFont(size=20, weight="bold"),
+            justify="center"
+        ).pack(pady=(40, 20))
+        
+        label = "Canned / Jarred Tomato Products"
+        matching_key = "canned_jarred_tomato_products"
+        # Yes Button → Go to ResultsPage
+        ctk.CTkButton(
+            self,
+            text="Yes",
+            width=200,
+            font=ctk.CTkFont(size=16),
+            command=lambda k=matching_key, l=label, d="18 months", y=1.5: master.switch_frame(ResultPage, k, l, y, d)
+            # command=lambda: master.switch_frame(ResultPage)
+        ).pack(pady=10)
+
+        # No Button → Go to CannedJarredPage
+        ctk.CTkButton(
+            self,
+            text="No",
+            width=200,
+            font=ctk.CTkFont(size=16),
+            command=lambda: master.switch_frame(CannedJarredPage)
+        ).pack(pady=10)
+
+        # Optional: Add navigation buttons
+        master.add_back_button(self, command=lambda: master.switch_frame(ShelfStablePage))
+        master.add_start_over_button(self)
+
+
 class CannedJarredPage(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
@@ -348,7 +394,7 @@ class CannedJarredPage(ctk.CTkFrame):
         canned_items = [
             (item["label"], item["shelf_life_years"]) 
             for item in food_items.values() 
-            if item.get("subcategory") == "Canned / Jarred"
+            if item.get("subcategory") == "Canned / Jarred" and item.get("label") != "Canned / Jarred Tomato Products"
         ]
 
         for label, years in canned_items:
@@ -372,6 +418,7 @@ class CannedJarredPage(ctk.CTkFrame):
         master.add_back_button(self, command=lambda: master.switch_frame(ShelfStablePage))
         master.add_start_over_button(self)
 
+
 class ResultPage(ctk.CTkFrame):
     def __init__(self, master, key, item_name, shelf_life_years, shelf_life_display=None):
         super().__init__(master)
@@ -380,16 +427,27 @@ class ResultPage(ctk.CTkFrame):
         # Get the subcategory from the dictionary
         self.subcategory = food_items.get(key, {}).get("subcategory", "Unknown")
 
-        print(f"subcategory: {self.subcategory}")
+        # print(f"subcategory: {self.subcategory}")
 
         self.shelf_life_years = shelf_life_years
         self.shelf_life_display = shelf_life_display or f"{shelf_life_years:.2f} years"
         self.master = master
 
+        text = self.item_name
+
+        # Split at the first " ("
+        if " (" in text:
+            before_paren, after_paren = text.split(" (", 1)
+            formatted_text = f"{before_paren}\n({after_paren}"
+        else:
+            formatted_text = text
+
         ctk.CTkLabel(
             self,
-            text=f"{self.item_name}",
-            font=ctk.CTkFont(size=20, weight="bold")
+            text=formatted_text,
+            font=ctk.CTkFont(size=20, weight="bold"),
+            justify="center",  # center multiline lines
+            anchor="center"    # center in the widget itself
         ).pack(pady=(30, 15))
 
         # Store variables for checkboxes
@@ -419,6 +477,18 @@ class ResultPage(ctk.CTkFrame):
             return [
                 "Is the packaging damaged?",
                 "Is the safety seal broken?"
+            ]
+        elif "dry goods" in subcategory.lower():
+            return [
+                "Is the packaging damaged?",
+                "Is there any sign of pests?",
+                "Is the product discolored or has an off smell?"
+            ]
+        elif "beverage" in subcategory.lower():
+            return [
+                "Is the packaging damaged?",
+                "Is there any leakage?",
+                "Is the product discolored or has an off smell?"
             ]
         else:
             return []  # No extra questions for other types
@@ -500,20 +570,32 @@ class ResultPage(ctk.CTkFrame):
             widget.destroy()
 
         today = datetime.date.today()
-        shelf_life_days = int(self.shelf_life_years * 365)
-        cutoff_date = today - datetime.timedelta(days=shelf_life_days)
+        # if self.shelf_life_years is infinite, set is_infinite to True
+        is_infinite = self.shelf_life_years == float('inf')
+        if not is_infinite:
+            shelf_life_days = int(self.shelf_life_years * 365)
+            cutoff_date = today - datetime.timedelta(days=shelf_life_days)
 
+        if " (" in self.item_name:
+            before_paren, after_paren = self.item_name.split(" (", 1)
+            display_text = f"{before_paren}\n({after_paren}"
+        else:
+            display_text = self.item_name
+
+        # Create label with centered multiline text
         ctk.CTkLabel(
             self,
-            text=f"{self.item_name} Shelf Life",
-            font=ctk.CTkFont(size=20, weight="bold")
+            text=display_text,
+            font=ctk.CTkFont(size=20, weight="bold"),
+            justify="center",
+            anchor="center"
         ).pack(pady=(30, 15))
 
         ctk.CTkLabel(
             self,
             # text=f"Recommended Shelf Life: {self.shelf_life_years:.2f} years\n"
             text=f"Recommended Shelf Life: {self.shelf_life_display}\n"
-                 f"✅ Acceptable if date on package is on or after:",
+                 f"✅ Acceptable if date on package is on or after:" if not is_infinite else "✅ Product is acceptable",
             font=ctk.CTkFont(size=16),
             text_color="green",
             justify="center"
@@ -521,7 +603,7 @@ class ResultPage(ctk.CTkFrame):
 
         ctk.CTkLabel(
             self,
-            text=cutoff_date.strftime('%B %d, %Y'),
+            text=cutoff_date.strftime('%B %d, %Y') if not is_infinite else "Indefinite Shelf Life",
             font=ctk.CTkFont(size=22, weight="bold"),
             text_color="green"
         ).pack(pady=(0, 20))
@@ -534,33 +616,32 @@ class DryGoodsPage(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
         self.configure(fg_color="white")
-
-        ctk.CTkLabel(self, text="Dry Goods", font=ctk.CTkFont(size=24, weight="bold")).pack(pady=(20, 10))
-
-        # Define the unique sub_sub_categories we want buttons for
-        sub_sub_categories = [
-            "Baking & Mixes",
-            "Miscellaneous",
-            "Beans, Legumes, Nuts",
-            "Spices & Seasoning",
-            "Breads & Bakery",
-            "Snacks & Crackers",
-            "Cereals & Breakfast",
-            "Flours & Grains",
-            "Oils & Spreads",
-            "Pasta & Rice Dishes",
-            "Sugars & Sweeteners"
-        ]
-
+        
+        ctk.CTkLabel(
+            self, 
+            text="Dry Goods", 
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=(30, 15))
+        
+        # Get all unique sub_sub_categories from dry goods items
+        sub_sub_categories = list(set(
+            item.get("sub_sub_category", "")
+            for item in food_items.values()
+            if item.get("subcategory") == "Dry Goods" and item.get("sub_sub_category")
+        ))
+        
+        # Sort the categories for consistent display
+        sub_sub_categories.sort()
+        
+        # Create frame for buttons
         btn_frame = ctk.CTkFrame(self, fg_color="white")
-        nav_frame = ctk.CTkFrame(self, fg_color="white")
         btn_frame.pack(pady=10, padx=20, fill="x")
-
+        
         # Create two columns by splitting the list roughly in half
         half = (len(sub_sub_categories) + 1) // 2
         col1 = sub_sub_categories[:half]
         col2 = sub_sub_categories[half:]
-
+        
         # Use grid layout for two columns
         for row_index in range(half):
             if row_index < len(col1):
@@ -571,6 +652,7 @@ class DryGoodsPage(ctk.CTkFrame):
                     command=lambda s=col1[row_index]: self.go_to_sub_sub_category(s)
                 )
                 btn1.grid(row=row_index, column=0, sticky="ew", padx=(0, 10), pady=5)
+            
             if row_index < len(col2):
                 btn2 = ctk.CTkButton(
                     btn_frame,
@@ -579,40 +661,216 @@ class DryGoodsPage(ctk.CTkFrame):
                     command=lambda s=col2[row_index]: self.go_to_sub_sub_category(s)
                 )
                 btn2.grid(row=row_index, column=1, sticky="ew", pady=5)
-
+        
         # Make columns expand equally
         btn_frame.grid_columnconfigure(0, weight=1)
         btn_frame.grid_columnconfigure(1, weight=1)
 
-        nav_frame = ctk.CTkFrame(self, bg_color="white", fg_color="white")
-        nav_frame.pack(side="bottom", fill="x", pady=20, padx=20)
-        # btn_frame = ctk.CTkFrame(self, fg_color="white")
-        # nav_frame = ctk.CTkFrame(self, fg_color="white")
-
-        master.add_back_button(nav_frame, command=lambda: master.switch_frame(ShelfStablePage))
-        master.add_start_over_button(nav_frame)
-
+        master.add_back_button(self, command=lambda: master.switch_frame(ShelfStablePage))
+        master.add_start_over_button(self)
 
     def go_to_sub_sub_category(self, sub_sub_category):
-        # Placeholder for your actual navigation logic
-        print(f"Navigate to sub_sub_category page: {sub_sub_category}")
-        # Example: master.switch_frame(SubSubCategoryPage, sub_sub_category=sub_sub_category)
+        # This method should navigate to a page showing items in this sub_sub_category
+        # You'll need to implement this based on your app structure
+        self.master.switch_frame(DryGoodsSubPage, sub_sub_category)
+
+class DryGoodsSubPage(ctk.CTkFrame):
+    def __init__(self, master, sub_sub_category):
+        super().__init__(master)
+        self.configure(fg_color="white")
+        self.sub_sub_category = sub_sub_category
+        
+        ctk.CTkLabel(
+            self,
+            text=sub_sub_category,
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=(30, 15))
+        
+        # Get all items in this sub_sub_category
+        sub_items = [
+            (item["label"], item["shelf_life_years"])
+            for item in food_items.values()
+            if item.get("subcategory") == "Dry Goods" and item.get("sub_sub_category") == sub_sub_category
+        ]
+        
+        for label, years in sub_items:
+            # Find the key from the label
+            matching_key = next(
+                (k for k, v in food_items.items() if v["label"] == label),
+                None
+            )
+            if not matching_key:
+                continue  # skip if key not found
+            
+            # Get display text
+            d = food_items[matching_key].get("shelf_life_display", f"{years:.2f} years")
+            
+            ctk.CTkButton(
+                self,
+                text=label,
+                width=350,
+                font=ctk.CTkFont(size=14),
+                command=lambda k=matching_key, l=label, d=d, y=years: master.switch_frame(ResultPage, k, l, y, d)
+            ).pack(pady=4)
+        
+        master.add_back_button(self, command=lambda: master.switch_frame(DryGoodsPage))
+        master.add_start_over_button(self)
+
+
+class BeverageSubPage(ctk.CTkFrame):
+    def __init__(self, master, sub_sub_category):
+        super().__init__(master)
+        self.configure(fg_color="white")
+        self.sub_sub_category = sub_sub_category
+        
+        ctk.CTkLabel(
+            self,
+            text=sub_sub_category,
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=(30, 15))
+        
+        # Get all items in this sub_sub_category
+        sub_items = [
+            (item["label"], item["shelf_life_years"])
+            for item in food_items.values()
+            if item.get("subcategory") == "Beverages" and item.get("sub_sub_category") == sub_sub_category
+        ]
+        
+        for label, years in sub_items:
+            # Find the key from the label
+            matching_key = next(
+                (k for k, v in food_items.items() if v["label"] == label),
+                None
+            )
+            if not matching_key:
+                continue  # skip if key not found
+            
+            # Get display text
+            d = food_items[matching_key].get("shelf_life_display", f"{years:.2f} years")
+            
+            ctk.CTkButton(
+                self,
+                text=label,
+                width=350,
+                font=ctk.CTkFont(size=14),
+                command=lambda k=matching_key, l=label, d=d, y=years: master.switch_frame(ResultPage, k, l, y, d)
+            ).pack(pady=4)
+        
+        master.add_back_button(self, command=lambda: master.switch_frame(BeveragesPage))
+        master.add_start_over_button(self)
 
 
 class BeveragesPage(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
         self.configure(fg_color="white")
-        ctk.CTkLabel(self, text="Beverages (Coming Soon)", font=ctk.CTkFont(size=20, weight="bold")).pack(pady=20)
+        
+        ctk.CTkLabel(
+            self, 
+            text="Beverages", 
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=(30, 15))
+        
+        # Define the beverage categories
+        beverage_categories = [
+            "Coffee",
+            "Juice", 
+            "Milk",
+            "Tea",
+            "Water",
+            "Other"
+        ]
+        
+        # Create buttons in a single column
+        for category in beverage_categories:
+            ctk.CTkButton(
+                self,
+                text=category,
+                width=150,
+                font=ctk.CTkFont(size=14),
+                command=lambda c=category: self.go_to_sub_sub_category(c)
+            ).pack(pady=4)
+        
         master.add_back_button(self, command=lambda: master.switch_frame(ShelfStablePage))
         master.add_start_over_button(self)
+    
+    def go_to_sub_sub_category(self, sub_sub_category):
+        self.master.switch_frame(BeverageSubPage, sub_sub_category)
 
 
 class CondimentsPage(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
         self.configure(fg_color="white")
-        ctk.CTkLabel(self, text="Condiments / Sauces (Coming Soon)", font=ctk.CTkFont(size=20, weight="bold")).pack(pady=20)
+        
+        ctk.CTkLabel(
+            self, 
+            text="Condiments / Sauces", 
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=(30, 15))
+        
+        # Get all condiment items
+        condiment_items = [
+            (item["label"], item["shelf_life_years"])
+            for item in food_items.values()
+            if item.get("subcategory") == "Condiments"
+        ]
+        
+        # Create frame for buttons
+        btn_frame = ctk.CTkFrame(self, fg_color="white")
+        btn_frame.pack(pady=10, padx=20, fill="x")
+        
+        # Create two columns by splitting the list roughly in half
+        half = (len(condiment_items) + 1) // 2
+        col1 = condiment_items[:half]
+        col2 = condiment_items[half:]
+        
+        # Use grid layout for two columns
+        for row_index in range(half):
+            if row_index < len(col1):
+                label, years = col1[row_index]
+                # Find the key from the label
+                matching_key = next(
+                    (k for k, v in food_items.items() if v["label"] == label),
+                    None
+                )
+                if matching_key:
+                    # Get display text
+                    d = food_items[matching_key].get("shelf_life_display", f"{years:.2f} years")
+                    
+                    btn1 = ctk.CTkButton(
+                        btn_frame,
+                        text=label,
+                        width=350,
+                        font=ctk.CTkFont(size=14),
+                        command=lambda k=matching_key, l=label, d=d, y=years: master.switch_frame(ResultPage, k, l, y, d)
+                    )
+                    btn1.grid(row=row_index, column=0, sticky="ew", padx=(0, 10), pady=4)
+            
+            if row_index < len(col2):
+                label, years = col2[row_index]
+                # Find the key from the label
+                matching_key = next(
+                    (k for k, v in food_items.items() if v["label"] == label),
+                    None
+                )
+                if matching_key:
+                    # Get display text
+                    d = food_items[matching_key].get("shelf_life_display", f"{years:.2f} years")
+                    
+                    btn2 = ctk.CTkButton(
+                        btn_frame,
+                        text=label,
+                        width=350,
+                        font=ctk.CTkFont(size=14),
+                        command=lambda k=matching_key, l=label, d=d, y=years: master.switch_frame(ResultPage, k, l, y, d)
+                    )
+                    btn2.grid(row=row_index, column=1, sticky="ew", pady=4)
+        
+        # Make columns expand equally
+        btn_frame.grid_columnconfigure(0, weight=1)
+        btn_frame.grid_columnconfigure(1, weight=1)
+        
         master.add_back_button(self, command=lambda: master.switch_frame(ShelfStablePage))
         master.add_start_over_button(self)
 
@@ -621,9 +879,52 @@ class RefrigeratedPage(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
         self.configure(fg_color="white")
-        ctk.CTkLabel(self, text="Refrigerated Items", font=ctk.CTkFont(size=20, weight="bold")).pack(pady=20)
-        ctk.CTkButton(self, text="Back", command=master.show_category_page).pack(pady=20)
+        
+        ctk.CTkLabel(
+            self, 
+            text="Refrigerated Items", 
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=(30, 15))
+        
+        # Define the refrigerated categories
+        refrigerated_categories = [
+            "Produce (cut varieties)",
+            "Dairy/Eggs/Cooler Items", 
+            "Meats",
+            "Prepared/Deli Foods"
+        ]
+        
+        # Create buttons in a single column
+        for category in refrigerated_categories:
+            ctk.CTkButton(
+                self,
+                text=category,
+                width=350,
+                font=ctk.CTkFont(size=14),
+                command=lambda c=category: self.go_to_refrigerated_subcategory(c)
+            ).pack(pady=4)
+        
+        master.add_back_button(self, command=lambda: master.show_category_page())
+        master.add_start_over_button(self)
+    
+    def go_to_refrigerated_subcategory(self, subcategory):
+        # Navigate to the appropriate subcategory page
+        self.master.switch_frame(RefrigeratedSubPage, subcategory)
 
+
+class RefrigeratedSubPage(ctk.CTkFrame):
+    def __init__(self, master, subcategory):
+        super().__init__(master)
+        self.configure(fg_color="white")
+        self.subcategory = subcategory
+
+        ctk.CTkLabel(
+            self,
+            text=f"{subcategory} Items",
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=20)
+
+        ctk.CTkButton(self, text="Back", command=master.show_category_page).pack(pady=20)
 
 class FrozenPage(ctk.CTkFrame):
     def __init__(self, master):

@@ -60,15 +60,39 @@ food_items = {
         "shelf_life_years": 3,
         "shelf_life_display": "3 years"
     },
+    # "high_acid_foods": {
+    #     "label": "Fruit / Pickles / Tomatoes (High-Acid Foods)",
+    #     "category": "Shelf-Stable",
+    #     "subcategory": "Canned / Jarred",
+    #     "shelf_life_years": 1.5,
+    #     "shelf_life_display": "1-2 years"
+    # },
     "high_acid_foods": {
-        "label": "High-Acid Foods (Fruit, Pickles, Tomatoes)",
+        "label": "Canned Fruit",
         "category": "Shelf-Stable",
         "subcategory": "Canned / Jarred",
         "shelf_life_years": 1.5,
-        "shelf_life_display": "1-2 years"
+        "shelf_life_display": "18 months"
     },
+
+    "pickles_canned": {
+        "label": "Pickles (Canned)",
+        "category": "Shelf-Stable",
+        "subcategory": "Canned / Jarred",
+        "shelf_life_years": 1,
+        "shelf_life_display": "1 year"
+    },
+    "pickles_jarred": {
+        "label": "Pickles (Jarred)",
+        "category": "Shelf-Stable",
+        "subcategory": "Canned / Jarred",
+        "shelf_life_years": 2,
+        "shelf_life_display": "2 years"
+    },
+
+
     "low_acid_foods": {
-        "label": "Low-Acid Foods (Gravy, Soups, Pasta, Vegetables)",
+        "label": "Gravy / Soups / Pasta / Vegetables (Low-Acid Foods)",
         "category": "Shelf-Stable",
         "subcategory": "Canned / Jarred",
         "shelf_life_years": 2.5,
@@ -88,10 +112,13 @@ food_items = {
         "shelf_life_years": 3,
         "shelf_life_display": "3 years"
     },
-
-
-
-
+    "canned_jarred_tomato_products": {
+        "label": "Canned / Jarred Tomato Products",
+        "category": "Shelf-Stable",
+        "subcategory": "Canned / Jarred",
+        "shelf_life_years": 1.5,
+        "shelf_life_display": "18 months"
+    },
 
     # Aseptically-Packaged Products
     "uht_milk": {
@@ -217,20 +244,20 @@ food_items = {
         "shelf_life_years": 1.75,
         "shelf_life_display": "18-24 months"
     },
-    "pickles_canned": {
-        "label": "Pickles (Canned)",
-        "category": "Shelf-Stable",
-        "subcategory": "Condiments",
-        "shelf_life_years": 1,
-        "shelf_life_display": "1 year"
-    },
-    "pickles_jarred": {
-        "label": "Pickles (Jarred)",
-        "category": "Shelf-Stable",
-        "subcategory": "Condiments",
-        "shelf_life_years": 2,
-        "shelf_life_display": "2 years"
-    },
+    # "pickles_canned": {
+    #     "label": "Pickles (Canned)",
+    #     "category": "Shelf-Stable",
+    #     "subcategory": "Condiments",
+    #     "shelf_life_years": 1,
+    #     "shelf_life_display": "1 year"
+    # },
+    # "pickles_jarred": {
+    #     "label": "Pickles (Jarred)",
+    #     "category": "Shelf-Stable",
+    #     "subcategory": "Condiments",
+    #     "shelf_life_years": 2,
+    #     "shelf_life_display": "2 years"
+    # },
     "salad_dressing": {
         "label": "Salad Dressings (Bottled)",
         "category": "Shelf-Stable",
@@ -245,20 +272,20 @@ food_items = {
         "shelf_life_years": 1.25,
         "shelf_life_display": "12-18 months"
     },
-    "spaghetti_sauce_canned": {
-        "label": "Spaghetti Sauce (Canned)",
-        "category": "Shelf-Stable",
-        "subcategory": "Condiments",
-        "shelf_life_years": 1.5,
-        "shelf_life_display": "18 months"
-    },
-    "spaghetti_sauce_jarred": {
-        "label": "Spaghetti Sauce (Jarred)",
-        "category": "Shelf-Stable",
-        "subcategory": "Condiments",
-        "shelf_life_years": 1.5,
-        "shelf_life_display": "18 months"
-    },
+    # "spaghetti_sauce_canned": {
+    #     "label": "Spaghetti Sauce (Canned)",
+    #     "category": "Shelf-Stable",
+    #     "subcategory": "Condiments",
+    #     "shelf_life_years": 1.5,
+    #     "shelf_life_display": "18 months"
+    # },
+    # "spaghetti_sauce_jarred": {
+    #     "label": "Spaghetti Sauce (Jarred)",
+    #     "category": "Shelf-Stable",
+    #     "subcategory": "Condiments",
+    #     "shelf_life_years": 1.5,
+    #     "shelf_life_display": "18 months"
+    # },
     "chocolate_syrup": {
         "label": "Chocolate Syrup",
         "category": "Shelf-Stable",
@@ -793,6 +820,7 @@ food_items = {
         "label": "Carbonated Beverages (Soda, Seltzer)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Other",
         "shelf_life_years": 0.375,
         "shelf_life_display": "3-6 months"
     },
@@ -800,6 +828,7 @@ food_items = {
         "label": "Cocoa Mixes",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Other",
         "shelf_life_years": 3.0,
         "shelf_life_display": "36 months"
     },
@@ -807,6 +836,7 @@ food_items = {
         "label": "Coffee Creamer (Liquid, Shelf Stable)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Coffee",
         "shelf_life_years": 0.875,
         "shelf_life_display": "9-12 months"
     },
@@ -814,6 +844,7 @@ food_items = {
         "label": "Coffee Creamer (Powdered)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Coffee",
         "shelf_life_years": 2.0,
         "shelf_life_display": "2 years"
     },
@@ -821,6 +852,7 @@ food_items = {
         "label": "Coffee (Ground)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Coffee",
         "shelf_life_years": 2.0,
         "shelf_life_display": "2 years"
     },
@@ -828,6 +860,7 @@ food_items = {
         "label": "Coffee (Instant)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Coffee",
         "shelf_life_years": 1.5,
         "shelf_life_display": "1-2 years"
     },
@@ -835,6 +868,7 @@ food_items = {
         "label": "Coffee (Whole Bean)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Coffee",
         "shelf_life_years": 1.0,
         "shelf_life_display": "1 year"
     },
@@ -842,6 +876,7 @@ food_items = {
         "label": "Instant Breakfast",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Other",
         "shelf_life_years": 0.5,
         "shelf_life_display": "6 months"
     },
@@ -849,6 +884,7 @@ food_items = {
         "label": "Juice (Bottle, Shelf Stable)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Juice",
         "shelf_life_years": 0.75,
         "shelf_life_display": "9 months"
     },
@@ -856,6 +892,7 @@ food_items = {
         "label": "Juice (Box)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Juice",
         "shelf_life_years": 0.417,
         "shelf_life_display": "4-6 months"
     },
@@ -863,6 +900,7 @@ food_items = {
         "label": "Juice (Canned)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Juice",
         "shelf_life_years": 1.5,
         "shelf_life_display": "18 months"
     },
@@ -870,6 +908,7 @@ food_items = {
         "label": "Juice Concentrate (Shelf Stable)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Juice",
         "shelf_life_years": 2.0,
         "shelf_life_display": "1-3 years"
     },
@@ -877,6 +916,7 @@ food_items = {
         "label": "Milk (Evaporated)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Milk",
         "shelf_life_years": 1.0,
         "shelf_life_display": "1 year"
     },
@@ -884,6 +924,7 @@ food_items = {
         "label": "Milk (Non-Fat Dry)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Milk",
         "shelf_life_years": 1.0,
         "shelf_life_display": "1 year"
     },
@@ -891,6 +932,7 @@ food_items = {
         "label": "Milk (Shelf Stable UHT)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Milk",
         "shelf_life_years": 0.5,
         "shelf_life_display": "6 months"
     },
@@ -898,6 +940,7 @@ food_items = {
         "label": "Milk (Sweetened Condensed)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Milk",
         "shelf_life_years": 1.0,
         "shelf_life_display": "1 year"
     },
@@ -905,6 +948,7 @@ food_items = {
         "label": "Nutritional Aid Supplements (Boost, Ensure)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Other",
         "shelf_life_years": 1.0,
         "shelf_life_display": "1 year"
     },
@@ -912,6 +956,7 @@ food_items = {
         "label": "Plant Based Milk (Soy, Rice, Coconut)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Other",
         "shelf_life_years": 0.5,
         "shelf_life_display": "6 months"
     },
@@ -919,6 +964,7 @@ food_items = {
         "label": "Tea (Bagged)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Tea",
         "shelf_life_years": 1.5,
         "shelf_life_display": "18 months"
     },
@@ -926,6 +972,7 @@ food_items = {
         "label": "Tea (Instant)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Tea",
         "shelf_life_years": 3.0,
         "shelf_life_display": "3 years"
     },
@@ -933,6 +980,7 @@ food_items = {
         "label": "Tea (Loose Leaf)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Tea",
         "shelf_life_years": 2.0,
         "shelf_life_display": "2 years"
     },
@@ -940,6 +988,7 @@ food_items = {
         "label": "Water",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Water",
         "shelf_life_years": float('inf'),
         "shelf_life_display": "Indefinite"
     },
@@ -947,6 +996,7 @@ food_items = {
         "label": "Water (Flavored)",
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
+        "sub_sub_category": "Water",
         "shelf_life_years": float('inf'),
         "shelf_life_display": "Indefinite"
     },
@@ -1647,6 +1697,7 @@ food_items = {
         "label": "Apples (Wedged)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1654,6 +1705,7 @@ food_items = {
         "label": "Berries (Blueberries, Raspberries, Blackberries)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1661,6 +1713,7 @@ food_items = {
         "label": "Broccoli (Florets, Stems)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1668,6 +1721,7 @@ food_items = {
         "label": "Cabbage (Shredded)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1675,6 +1729,7 @@ food_items = {
         "label": "Carrots (Baby)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.058,
         "shelf_life_display": "Over 21 days"
     },
@@ -1682,6 +1737,7 @@ food_items = {
         "label": "Carrots (Sticks)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1689,6 +1745,7 @@ food_items = {
         "label": "Cauliflower (Florets)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1696,6 +1753,7 @@ food_items = {
         "label": "Celery (Sticks)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1703,6 +1761,7 @@ food_items = {
         "label": "Citrus (Segmented)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1710,6 +1769,7 @@ food_items = {
         "label": "Cucumbers (Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "4-9 days"
     },
@@ -1717,6 +1777,7 @@ food_items = {
         "label": "Garlic (Peeled)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.058,
         "shelf_life_display": "Over 21 days"
     },
@@ -1724,6 +1785,7 @@ food_items = {
         "label": "Grapes",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1731,6 +1793,7 @@ food_items = {
         "label": "Jicama (Sticks)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "4-9 days"
     },
@@ -1738,6 +1801,7 @@ food_items = {
         "label": "Kiwi (Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1745,6 +1809,7 @@ food_items = {
         "label": "Lettuce (Whole Heads)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1752,6 +1817,7 @@ food_items = {
         "label": "Lettuce Salads (Whole Leaves, Small Leaf Mixes)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.016,
         "shelf_life_display": "5-7 days"
     },
@@ -1759,6 +1825,7 @@ food_items = {
         "label": "Mango (Cubed, Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1766,6 +1833,7 @@ food_items = {
         "label": "Melon (Cubed, Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1773,6 +1841,7 @@ food_items = {
         "label": "Mushrooms (Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "4-9 days"
     },
@@ -1780,6 +1849,7 @@ food_items = {
         "label": "Onions (Sweet, Red, Yellow, Pearl)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.016,
         "shelf_life_display": "5-7 days"
     },
@@ -1787,6 +1857,7 @@ food_items = {
         "label": "Peaches (Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1794,6 +1865,7 @@ food_items = {
         "label": "Pears (Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.015,
         "shelf_life_display": "2-9 days"
     },
@@ -1801,6 +1873,7 @@ food_items = {
         "label": "Peppers (Diced, Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "4-9 days"
     },
@@ -1808,6 +1881,7 @@ food_items = {
         "label": "Pineapple (Chunk, Diced, Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     }, 
@@ -1815,6 +1889,7 @@ food_items = {
         "label": "Pomegranate (Arils)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
@@ -1822,6 +1897,7 @@ food_items = {
         "label": "Potatoes (Peeled)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.044,
         "shelf_life_display": "14-18 days"
     },
@@ -1829,6 +1905,7 @@ food_items = {
         "label": "Root Mixtures",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.044,
         "shelf_life_display": "14-18 days"
     },
@@ -1836,6 +1913,7 @@ food_items = {
         "label": "Spinach (Leaves)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "5-7 days"
     },
@@ -1843,6 +1921,7 @@ food_items = {
         "label": "Squash (Cubed, Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "4-9 days"
     },
@@ -1850,6 +1929,7 @@ food_items = {
         "label": "Strawberries (Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Fruit",
         "shelf_life_years": 0.018,
         "shelf_life_display": "2-9 days"
     },
@@ -1857,6 +1937,7 @@ food_items = {
         "label": "Tomatoes (Diced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "4-9 days"
     },
@@ -1864,6 +1945,7 @@ food_items = {
         "label": "Zucchini (Cubed, Sliced)",
         "category": "Refrigerated",
         "subcategory": "Cut Produce",
+        "sub_sub_category": "Vegetable",
         "shelf_life_years": 0.018,
         "shelf_life_display": "4-9 days"
     },
@@ -2817,3 +2899,4 @@ food_items = {
         "shelf_life_display": "4-6 months"
     }   
 }
+
