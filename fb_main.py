@@ -910,7 +910,121 @@ class RefrigeratedPage(ctk.CTkFrame):
     def go_to_refrigerated_subcategory(self, subcategory):
         # Navigate to the appropriate subcategory page
         self.master.switch_frame(RefrigeratedSubPage, subcategory)
-
+# class RefrigeratedSubPage(ctk.CTkFrame):
+#     def __init__(self, master, subcategory):
+#         # print(f"Initializing RefrigeratedSubPage with subcategory: {subcategory}")
+#         super().__init__(master)
+#         self.configure(fg_color="white")
+#         self.subcategory = subcategory
+       
+#         ctk.CTkLabel(
+#             self,
+#             text=f"{subcategory}",
+#             font=ctk.CTkFont(size=20, weight="bold")
+#         ).pack(pady=(30, 15))
+       
+#         # DEBUG: Print all items for this subcategory
+#         print(f"\nDEBUG: Looking for subcategory: '{subcategory}'")
+#         matching_items = [
+#             item for item in food_items.values()
+#             if item.get("subcategory") == subcategory
+#         ]
+#         print(f"DEBUG: Found {len(matching_items)} items with subcategory '{subcategory}'")
+        
+#         # DEBUG: Print the actual keys in the first few items
+#         print("\nDEBUG: First few items' actual keys:")
+#         for i, item in enumerate(matching_items[:5]):
+#             print(f"DEBUG: Item {i+1} keys: {list(item.keys())}")
+#             print(f"DEBUG: Item {i+1} full data: {item}")
+        
+#         # DEBUG: Print each matching item's sub_sub_category
+#         for i, item in enumerate(matching_items):
+#             print(f"DEBUG: Item {i+1}: sub_sub_category = '{item.get('sub_sub_category', 'MISSING')}'")
+#             print(f"DEBUG: Item {i+1}: name = '{item.get('name', 'MISSING')}'")
+#             # Try some common variations
+#             print(f"DEBUG: Item {i+1}: sub_sub_cat = '{item.get('sub_sub_cat', 'MISSING')}'")
+#             print(f"DEBUG: Item {i+1}: subsub_category = '{item.get('subsub_category', 'MISSING')}'")
+#             print(f"DEBUG: Item {i+1}: subSubCategory = '{item.get('subSubCategory', 'MISSING')}'")
+        
+#         # Get all unique sub_sub_categories from this subcategory
+#         sub_sub_categories = list(set(
+#             item.get("sub_sub_category", "")
+#             for item in food_items.values()
+#             if item.get("subcategory") == subcategory and item.get("sub_sub_category")
+#         ))
+        
+#         # DEBUG: Print the final sub_sub_categories list
+#         print(f"DEBUG: Final sub_sub_categories list: {sub_sub_categories}")
+       
+#         # Sort the categories for consistent display
+#         sub_sub_categories.sort()
+       
+#         # If no sub_sub_categories found, show a message
+#         if not sub_sub_categories:
+#             ctk.CTkLabel(
+#                 self,
+#                 text="No items found in this category",
+#                 font=ctk.CTkFont(size=14)
+#             ).pack(pady=20)
+#             master.add_back_button(self, command=lambda: master.switch_frame(RefrigeratedPage))
+#             master.add_start_over_button(self)
+#             return
+       
+#         # Create frame for buttons
+#         btn_frame = ctk.CTkFrame(self, fg_color="white")
+#         btn_frame.pack(pady=10, padx=20, fill="x")
+       
+#         # Check if we should use one column or two columns
+#         if len(sub_sub_categories) < 8:
+#             # Single column layout
+#             for row_index, category in enumerate(sub_sub_categories):
+#                 btn = ctk.CTkButton(
+#                     btn_frame,
+#                     text=category,
+#                     font=ctk.CTkFont(size=14),
+#                     command=lambda s=category: self.go_to_sub_sub_category(s)
+#                 )
+#                 btn.grid(row=row_index, column=0, sticky="ew", pady=4)
+            
+#             # Make single column expand
+#             btn_frame.grid_columnconfigure(0, weight=1)
+#         else:
+#             # Two column layout
+#             # Create two columns by splitting the list roughly in half
+#             half = (len(sub_sub_categories) + 1) // 2
+#             col1 = sub_sub_categories[:half]
+#             col2 = sub_sub_categories[half:]
+           
+#             # Use grid layout for two columns
+#             for row_index in range(half):
+#                 if row_index < len(col1):
+#                     btn1 = ctk.CTkButton(
+#                         btn_frame,
+#                         text=col1[row_index],
+#                         font=ctk.CTkFont(size=14),
+#                         command=lambda s=col1[row_index]: self.go_to_sub_sub_category(s)
+#                     )
+#                     btn1.grid(row=row_index, column=0, sticky="ew", padx=(0, 10), pady=4)
+               
+#                 if row_index < len(col2):
+#                     btn2 = ctk.CTkButton(
+#                         btn_frame,
+#                         text=col2[row_index],
+#                         font=ctk.CTkFont(size=14),
+#                         command=lambda s=col2[row_index]: self.go_to_sub_sub_category(s)
+#                     )
+#                     btn2.grid(row=row_index, column=1, sticky="ew", pady=4)
+           
+#             # Make columns expand equally
+#             btn_frame.grid_columnconfigure(0, weight=1)
+#             btn_frame.grid_columnconfigure(1, weight=1)
+       
+#         master.add_back_button(self, command=lambda: master.switch_frame(RefrigeratedPage))
+#         master.add_start_over_button(self)
+   
+#     def go_to_sub_sub_category(self, sub_sub_category):
+#         # self.master.switch_frame(RefrigeratedItemsPage, self.subcategory, sub_sub_category)
+#         print(f"RefrigeratedSubPage: Navigating to sub_sub_category: {sub_sub_category}")
 
 class RefrigeratedSubPage(ctk.CTkFrame):
     def __init__(self, master, subcategory):
@@ -924,7 +1038,25 @@ class RefrigeratedSubPage(ctk.CTkFrame):
             text=f"{subcategory}",
             font=ctk.CTkFont(size=20, weight="bold")
         ).pack(pady=(30, 15))
-       
+        
+        
+        # DEBUG: Print all items for this subcategory *****************************
+        # print all items that match this subcategory
+        print(f"\nRefrigeratedSubPage: Looking for subcategory: '{subcategory}'")
+        matching_items = [
+            item for item in food_items.values()
+            if item.get("subcategory") == subcategory
+        ]
+        print(f"RefrigeratedSubPage: Found {len(matching_items)} items with subcategory '{subcategory}'")
+        # Print all matching items
+        for item in matching_items:
+            print(f" - {item.get('label')}")
+
+# *************************************
+
+
+
+
         # Get all unique sub_sub_categories from this subcategory
         sub_sub_categories = list(set(
             item.get("sub_sub_category", "")
@@ -934,7 +1066,7 @@ class RefrigeratedSubPage(ctk.CTkFrame):
        
         # Sort the categories for consistent display
         sub_sub_categories.sort()
-       
+        print(f"RefrigeratedSubPage: Found sub_sub_categories: {sub_sub_categories}")
         # If no sub_sub_categories found, show a message
         if not sub_sub_categories:
             ctk.CTkLabel(
@@ -1004,50 +1136,51 @@ class RefrigeratedSubPage(ctk.CTkFrame):
         # self.master.switch_frame(RefrigeratedItemsPage, self.subcategory, sub_sub_category)
         print(f"RefrigeratedSubPage: Navigating to sub_sub_category: {sub_sub_category}")
    
-# class RefrigeratedItemsPage(ctk.CTkFrame):
-#     def __init__(self, master, subcategory, sub_sub_category):
-#         super().__init__(master)
-#         self.configure(fg_color="white")
-#         self.subcategory = subcategory
-#         self.sub_sub_category = sub_sub_category
+class RefrigeratedItemsPage(ctk.CTkFrame):
+    def __init__(self, master, subcategory, sub_sub_category):
+        print(f"Initializing RefrigeratedItemsPage with subcategory: {subcategory}, sub_sub_category: {sub_sub_category}")
+        super().__init__(master)
+        self.configure(fg_color="white")
+        self.subcategory = subcategory
+        self.sub_sub_category = sub_sub_category
        
-#         ctk.CTkLabel(
-#             self,
-#             text=f"{subcategory} - {sub_sub_category}",
-#             font=ctk.CTkFont(size=20, weight="bold")
-#         ).pack(pady=(30, 15))
+        ctk.CTkLabel(
+            self,
+            text=f"{subcategory} - {sub_sub_category}",
+            font=ctk.CTkFont(size=20, weight="bold")
+        ).pack(pady=(30, 15))
        
-#         # Get all items in this sub_sub_category
-#         sub_items = [
-#             (item["label"], item["shelf_life_years"])
-#             for item in food_items.values()
-#             if item.get("subcategory") == subcategory and item.get("sub_sub_category") == sub_sub_category
-#         ]
-#         for item in sub_items:
-#             print(f"item: {item}")
+        # Get all items in this sub_sub_category
+        sub_items = [
+            (item["label"], item["shelf_life_years"])
+            for item in food_items.values()
+            if item.get("subcategory") == subcategory and item.get("sub_sub_category") == sub_sub_category
+        ]
+        for item in sub_items:
+            print(f"item: {item}")
 
-#         for label, years in sub_items:
-#             # Find the key from the label
-#             matching_key = next(
-#                 (k for k, v in food_items.items() if v["label"] == label),
-#                 None
-#             )
-#             if not matching_key:
-#                 continue  # skip if key not found
+        for label, years in sub_items:
+            # Find the key from the label
+            matching_key = next(
+                (k for k, v in food_items.items() if v["label"] == label),
+                None
+            )
+            if not matching_key:
+                continue  # skip if key not found
             
-#             # Get display text
-#             d = food_items[matching_key].get("shelf_life_display", f"{years:.2f} years")
+            # Get display text
+            d = food_items[matching_key].get("shelf_life_display", f"{years:.2f} years")
             
-#             ctk.CTkButton(
-#                 self,
-#                 text=label,
-#                 width=350,
-#                 font=ctk.CTkFont(size=14),
-#                 command=lambda k=matching_key, l=label, d=d, y=years: master.switch_frame(ResultPage, k, l, y, d)
-#             ).pack(pady=4)
+            ctk.CTkButton(
+                self,
+                text=label,
+                width=350,
+                font=ctk.CTkFont(size=14),
+                command=lambda k=matching_key, l=label, d=d, y=years: master.switch_frame(ResultPage, k, l, y, d)
+            ).pack(pady=4)
         
-#         master.add_back_button(self, command=lambda: master.switch_frame(RefrigeratedSubPage, subcategory))
-#         master.add_start_over_button(self)
+        master.add_back_button(self, command=lambda: master.switch_frame(RefrigeratedSubPage, subcategory))
+        master.add_start_over_button(self)
 
 class FrozenPage(ctk.CTkFrame):
     def __init__(self, master):
