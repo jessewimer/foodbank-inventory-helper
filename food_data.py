@@ -87,9 +87,9 @@ food_items = {
         "category": "Shelf-Stable",
         "subcategory": "Canned / Jarred",
         "shelf_life_years": 2,
-        "shelf_life_display": "2 years"
+        "shelf_life_display": "2 years",
+        "notes": "Discard if inside of lid is rusting upon opening"
     },
-
 
     "low_acid_foods": {
         "label": "Gravy / Soups / Pasta / Vegetables (Low-Acid Foods)",
@@ -214,7 +214,8 @@ food_items = {
         "category": "Shelf-Stable",
         "subcategory": "Condiments",
         "shelf_life_years": 2,
-        "shelf_life_display": "2 years"
+        "shelf_life_display": "2 years",
+        "notes": "Remains safe after crystallization"
     },
     "jams_jellies": {
         "label": "Jams, Jellies, Preserves",
@@ -387,7 +388,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Breads & Bakery",
         "shelf_life_years": 0.01,
-        "shelf_life_display": "3-5 days at room temperature"
+        "shelf_life_display": "3-5 days at room temperature",
+        "notes": "Longer if frozen"
     },
     "bakery_bread": {
         "label": "Fresh Bakery Bread",
@@ -395,7 +397,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Breads & Bakery",
         "shelf_life_years": 0.008,
-        "shelf_life_display": "2-4 days"
+        "shelf_life_display": "2-4 days",
+        "notes": "Longer if frozen"
     },
     "commercial_cakes": {
         "label": "Commercial Cakes",
@@ -403,7 +406,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Breads & Bakery",
         "shelf_life_years": 0.008,
-        "shelf_life_display": "2-4 days at room temperature"
+        "shelf_life_display": "2-4 days at room temperature",
+        "notes": "Several months if frozen"
     },
     "candy_caramel": {
         "label": "Caramel Candy",
@@ -483,7 +487,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Flours & Grains",
         "shelf_life_years": 1.5,
-        "shelf_life_display": "1-2 years"
+        "shelf_life_display": "1-2 years",
+        "notes": "Longer if frozen"
     },
     "crackers": {
         "label": "Crackers",
@@ -507,7 +512,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Flours & Grains",
         "shelf_life_years": 0.88,
-        "shelf_life_display": "9-12 months"
+        "shelf_life_display": "9-12 months",
+        "notes": "Longer if frozen"
     },
     "all_purpose_flour": {
         "label": "All-Purpose Flour (Potato, Rice, White)",
@@ -523,7 +529,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Flours & Grains",
         "shelf_life_years": 0.42,
-        "shelf_life_display": "4-6 months"
+        "shelf_life_display": "4-6 months",
+        "notes": "Longer if frozen"
     },
     "whole_wheat_flour": {
         "label": "Whole Wheat Flour",
@@ -531,7 +538,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Flours & Grains",
         "shelf_life_years": 0.5,
-        "shelf_life_display": "6 months"
+        "shelf_life_display": "6 months",
+        "notes": "Keeps longer if refrigerated or frozen"
     },
     "dried_fruit": {
         "label": "Dried Fruit",
@@ -731,7 +739,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Spices & Seasoning",
         "shelf_life_years": 4,
-        "shelf_life_display": "Up to 4 years"
+        "shelf_life_display": "Up to 4 years",
+        "notes": "Lose flavor over time"
     },
     "ground_spices": {
         "label": "Ground Spices",
@@ -739,7 +748,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Spices & Seasoning",
         "shelf_life_years": 2,
-        "shelf_life_display": "Up to 2 years"
+        "shelf_life_display": "Up to 2 years",
+        "notes": "Lose flavor over time"
     },
     "stuffing_mix": {
         "label": "Stuffing Mix",
@@ -811,7 +821,8 @@ food_items = {
         "subcategory": "Dry Goods",
         "sub_sub_category": "Miscellaneous",
         "shelf_life_years": 0.25,
-        "shelf_life_display": "3 months"
+        "shelf_life_display": "3 months (shelf/fridge)",
+        "notes": "6-8 months if frozen"
     },
 
    
@@ -870,7 +881,8 @@ food_items = {
         "subcategory": "Beverages",
         "sub_sub_category": "Coffee",
         "shelf_life_years": 1.0,
-        "shelf_life_display": "1 year"
+        "shelf_life_display": "1 year",
+        "notes": "Assumes vacuum sealed"
     },
     "instant_breakfast": {
         "label": "Instant Breakfast",
@@ -989,7 +1001,7 @@ food_items = {
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
         "sub_sub_category": "Water",
-        "shelf_life_years": float('inf'),
+        "shelf_life_years": 999,
         "shelf_life_display": "Indefinite"
     },
     "water_flavored": {
@@ -997,20 +1009,21 @@ food_items = {
         "category": "Shelf-Stable",
         "subcategory": "Beverages",
         "sub_sub_category": "Water",
-        "shelf_life_years": float('inf'),
+        "shelf_life_years": 999,
         "shelf_life_display": "Indefinite"
     },
 
-    # Dairy / Eggs / Cooler Items (Refrigerated)
+    # Dairy / Eggs / Cooler Items (Refrigerated and frozen)
     "beverage_alternative_refrigerated": {
         "label": "Beverage Alternative (Soy, Rice, Nut, Oat)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.019,
-        "shelf_life_display": "7 days"
+        "shelf_life_display": "7 days",
+        "notes": "Freezing not recommended"
     },
-    "butter": {
+    "butter_refrigerated": {
         "label": "Butter",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1018,39 +1031,52 @@ food_items = {
         "shelf_life_years": 0.208,
         "shelf_life_display": "2-3 months"
     },
-    "buttermilk": {
+    "butter_frozen": {
+        "label": "Butter (Frozen)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "sub_sub_category": "Dairy",
+        "shelf_life_years": 1,
+        "shelf_life_display": "1 year"
+    },
+
+    "buttermilk_refrigerated": {
         "label": "Buttermilk",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.038,
-        "shelf_life_display": "14 days"
+        "shelf_life_display": "14 days",
+        "notes": "Freezes poorly"
     },
-    "cheese_trays": {
+    "cheese_trays_refrigerated": {
         "label": "Cheese Trays",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.038,
-        "shelf_life_display": "2 weeks"
+        "shelf_life_display": "2 weeks",
+        "notes": "Do not freeze"
     },
-    "cheese_cottage": {
-        "label": "Cheese (Cottage)",
+    "cottage_cheese_refrigerated": {
+        "label": "Cottage Cheese",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.038,
-        "shelf_life_display": "14 days"
+        "shelf_life_display": "14 days",
+        "notes": "Freezes poorly"
     },
-    "cheese_cream": {
-        "label": "Cheese (Cream)",
+    "cream_cheese_refrigerated": {
+        "label": "Cream Cheese",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.038,
-        "shelf_life_display": "14 days"
+        "shelf_life_display": "14 days",
+        "notes": "Freezes poorly"
     },
-    "cheese_deli_sliced": {
+    "cheese_deli_sliced_refrigerated": {
         "label": "Cheese (Deli Sliced)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1058,7 +1084,16 @@ food_items = {
         "shelf_life_years": 0.077,
         "shelf_life_display": "3-4 weeks"
     },
-    "cheese_hard": {
+    "cheese_deli_sliced_frozen": {
+        "label": "Cheese (Deli Sliced, Frozen)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "sub_sub_category": "Dairy",
+        "shelf_life_years": 0.75,
+        "shelf_life_display": "6-8 months"
+    },
+
+    "cheese_hard_refrigerated": {
         "label": "Cheese (Hard)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1066,7 +1101,16 @@ food_items = {
         "shelf_life_years": 0.5,
         "shelf_life_display": "6 months"
     },
-    "cheese_soft": {
+
+    "cheese_hard_frozen": {
+        "label": "Cheese (Hard)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.583,
+        "shelf_life_display": "6-8 months"
+    },
+
+    "cheese_soft_refrigerated": {
         "label": "Cheese (Soft)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1074,7 +1118,15 @@ food_items = {
         "shelf_life_years": 0.029,
         "shelf_life_display": "1-2 weeks"
     },
-    "cheese_processed_sliced": {
+
+    "cheese_soft_frozen": {
+        "label": "Cheese (Soft)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.5,
+        "shelf_life_display": "6 months"
+    },
+    "cheese_processed_sliced_refrigerated": {
         "label": "Cheese (Processed Sliced, Shredded, String)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1082,23 +1134,32 @@ food_items = {
         "shelf_life_years": 0.077,
         "shelf_life_display": "3-4 weeks"
     },
-    "cheese_ricotta": {
+    "cheese_processed_frozen": {
+        "label": "Cheese (Processed - sliced, shredded, string)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.5,
+        "shelf_life_display": "6 months"
+    },
+    "cheese_ricotta_refrigerated": {
         "label": "Cheese (Ricotta)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.019,
-        "shelf_life_display": "7 days"
+        "shelf_life_display": "7 days",
+        "notes": "Freezes poorly"
     },
-    "coffee_creamer_dairy": {
+    "coffee_creamer_dairy_refrigerated": {
         "label": "Coffee Creamer (Dairy)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.058,
-        "shelf_life_display": "3 weeks"
+        "shelf_life_display": "3 weeks",
+        "notes": "Follow label instructions for freezing"
     },
-    "cream_half_and_half": {
+    "cream_half_and_half_refrigerated": {
         "label": "Cream (Half & Half)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1106,7 +1167,14 @@ food_items = {
         "shelf_life_years": 0.014,
         "shelf_life_display": "5 days"
     },
-    "cream_heavy": {
+    "cream_half_and_half_frozen": {
+        "label": "Cream (Half & Half)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.333,
+        "shelf_life_display": "4 months, use for cooking"
+    },
+    "cream_heavy_refrigerated": {
         "label": "Cream (Heavy)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1114,7 +1182,14 @@ food_items = {
         "shelf_life_years": 0.027,
         "shelf_life_display": "10 days"
     },
-    "cream_light": {
+    "cream_heavy_frozen": {
+        "label": "Cream (Heavy)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.292,
+        "shelf_life_display": "3-4 months, use for cooking"
+    },
+    "cream_light_refrigerated": {
         "label": "Cream (Light)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1122,15 +1197,29 @@ food_items = {
         "shelf_life_years": 0.019,
         "shelf_life_display": "1 week"
     },
-    "crust_pie_pizza": {
+    "cream_light_frozen": {
+        "label": "Cream (Light)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.292,
+        "shelf_life_display": "3-4 months, use for cooking"
+    },
+    "crust_pie_pizza_refrigerated": {
         "label": "Crust (Pie or Pizza Ready to Bake)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.0,
         "shelf_life_display": "Sell-by date"
+    },    
+    "crust_pie_pizza_frozen": {
+        "label": "Crust (Pie or Pizza - ready to bake)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.167,
+        "shelf_life_display": "2 months"
     },
-    "deli_lunch_meat": {
+    "deli_lunch_meat_refrigerated": {
         "label": "Deli or Lunch Meat (Retail Packed Only)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1138,31 +1227,41 @@ food_items = {
         "shelf_life_years": 0.247,
         "shelf_life_display": "90 days"
     },
-    "dips_dairy_based": {
+    "deli_lunch_meat_frozen": {
+        "label": "Deli or Lunch Meat (Retail Packed Only 90 Days)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.125,
+        "shelf_life_display": "1-2 months"
+    }, 
+    "dips_dairy_based_refrigerated": {
         "label": "Dips (Made with Dairy, Mayo, Sour Cream)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.038,
-        "shelf_life_display": "2 weeks"
+        "shelf_life_display": "2 weeks",
+        "notes": "Do not freeze"
     },
-    "dough_biscuit": {
+    "dough_biscuit_refrigerated": {
         "label": "Dough (Biscuit)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.005,
-        "shelf_life_display": "2 days"
+        "shelf_life_display": "2 days", 
+        "notes": "Do not freeze"
     },
-    "dough_bread_pizza": {
+    "dough_bread_pizza_refrigerated": {
         "label": "Dough (Bread or Pizza)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.005,
-        "shelf_life_display": "2 days"
+        "shelf_life_display": "2 days",
+        "notes": "Do not freeze"
     },
-    "dough_cookie": {
+    "dough_cookie_refrigerated": {
         "label": "Dough (Cookie)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1170,7 +1269,15 @@ food_items = {
         "shelf_life_years": 0.019,
         "shelf_life_display": "7 days"
     },
-    "egg_nog": {
+
+    "dough_cookie_frozen": {
+        "label": "Dough (Cookie)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.208,
+        "shelf_life_display": "2-3 months"
+    },
+    "egg_nog_refrigerated": {
         "label": "Egg Nog",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1178,23 +1285,32 @@ food_items = {
         "shelf_life_years": 0.014,
         "shelf_life_display": "5 days"
     },
-    "eggs_hardboiled": {
+    "egg_nog_frozen": {
+        "label": "Egg Nog",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.5,
+        "shelf_life_display": "6 months"
+    },
+    "eggs_hardboiled_refrigerated": {
         "label": "Eggs (Hardboiled)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Eggs",
         "shelf_life_years": 0.019,
-        "shelf_life_display": "1 week"
+        "shelf_life_display": "1 week",
+        "notes": "Do not freeze"
     },
-    "eggs_in_shell": {
+    "eggs_in_shell_refrigerated": {
         "label": "Eggs (In Shell)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Eggs",
         "shelf_life_years": 0.096,
-        "shelf_life_display": "4-5 weeks"
+        "shelf_life_display": "4-5 weeks",
+        "notes": "Do not freeze"
     },
-    "eggs_pasteurized_substitute": {
+    "eggs_pasteurized_substitute_refrigerated": {
         "label": "Eggs (Pasteurized Carton Egg Substitute)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1202,7 +1318,14 @@ food_items = {
         "shelf_life_years": 0.027,
         "shelf_life_display": "10 days"
     },
-    "eggs_pasteurized_real": {
+    "eggs_pasteurized_substitute_frozen": {
+        "label": "Eggs (Pasteurized Carton Egg Substitute)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 1.0,
+        "shelf_life_display": "1 year"
+    },
+    "eggs_pasteurized_real_refrigerated": {
         "label": "Eggs (Pasteurized Carton Real Eggs, Unopened)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1210,7 +1333,14 @@ food_items = {
         "shelf_life_years": 0.027,
         "shelf_life_display": "10 days"
     },
-    "eggs_whites_yolks": {
+    "eggs_pasteurized_real_frozen": {
+        "label": "Eggs (Pasteurized Carton Real Eggs, Unopened)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 1.0,
+        "shelf_life_display": "1 year"
+    },
+    "eggs_whites_yolks_refrigerated": {
         "label": "Eggs (Whites or Yolks)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1218,7 +1348,14 @@ food_items = {
         "shelf_life_years": 0.008,
         "shelf_life_display": "2-4 days"
     },
-    "hummus": {
+    "eggs_whites_yolks_frozen": {
+        "label": "Eggs (Whites or Yolks)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 1.0,
+        "shelf_life_display": "12 months"
+    },
+    "hummus_refrigerated": {
         "label": "Hummus",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1226,7 +1363,14 @@ food_items = {
         "shelf_life_years": 0.058,
         "shelf_life_display": "2-4 weeks"
     },
-    "juice_purchased_refrigerated": {
+    "hummus_frozen": {
+        "label": "Hummus",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.125,
+        "shelf_life_display": "1-2 months"
+    },
+    "juice_purchased_refrigerated_refrigerated": {
         "label": "Juice (Purchased Refrigerated)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1234,7 +1378,14 @@ food_items = {
         "shelf_life_years": 0.058,
         "shelf_life_display": "3 weeks"
     },
-    "margarine": {
+    "juice_purchased_refrigerated_frozen": {
+        "label": "Juice (Purchased Refrigerated)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.75,
+        "shelf_life_display": "8-12 months"
+    },
+    "margarine_refrigerated": {
         "label": "Margarine",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1242,7 +1393,14 @@ food_items = {
         "shelf_life_years": 0.5,
         "shelf_life_display": "6 months"
     },
-    "milk_refrigerated": {
+    "margarine_frozen": {
+        "label": "Margarine",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 1.0,
+        "shelf_life_display": "12 months"
+    },
+    "milk_refrigerated_refrigerated": {
         "label": "Milk",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1250,7 +1408,14 @@ food_items = {
         "shelf_life_years": 0.014,
         "shelf_life_display": "5 days"
     },
-    "pasta_fresh": {
+    "milk_frozen": {
+        "label": "Milk",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Can be frozen"
+    },
+    "pasta_fresh_refrigerated": {
         "label": "Pasta (Fresh)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1258,7 +1423,14 @@ food_items = {
         "shelf_life_years": 0.004,
         "shelf_life_display": "1-2 days"
     },
-    "pesto_jar_tub": {
+    "pasta_fresh_frozen": {
+        "label": "Pasta (Fresh)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.167,
+        "shelf_life_display": "2 months"
+    },
+    "pesto_jar_tub_refrigerated": {
         "label": "Pesto (Jar/Tub)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1266,55 +1438,68 @@ food_items = {
         "shelf_life_years": 0.038,
         "shelf_life_display": "1-3 weeks"
     },
-    "pico_de_gallo": {
+    "pesto_jar_tub_frozen": {
+        "label": "Pesto (Jar/Tub)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.583,
+        "shelf_life_display": "6-8 months"
+    },
+    "pico_de_gallo_refrigerated": {
         "label": "Pico de Gallo",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.008,
-        "shelf_life_display": "3 days"
+        "shelf_life_display": "3 days",
+        "notes": "Do not freeze"
     },
-    "pudding_purchased_refrigerated": {
+    "pudding_purchased_refrigerated_refrigerated": {
         "label": "Pudding (Purchased Refrigerated)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.019,
-        "shelf_life_display": "1 week"
+        "shelf_life_display": "1 week",
+        "notes": "Do not freeze"
     },
-    "salad_greens_mixed": {
+    "salad_greens_mixed_refrigerated": {
         "label": "Salad Greens, Mixed Greens, Spinach Leaves",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.016,
-        "shelf_life_display": "5-7 days unopened"
+        "shelf_life_display": "5-7 days unopened",
+        "notes": "Do not freeze"
     },
-    "salad_dressing_refrigerated": {
+    "salad_dressing_refrigerated_refrigerated": {
         "label": "Salad Dressing (Refrigerated)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.25,
-        "shelf_life_display": "3 months"
+        "shelf_life_display": "3 months",
+        "notes": "Do not freeze"
     },
-    "salsa_fresh": {
+    "salsa_fresh_refrigerated": {
         "label": "Salsa (Fresh)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.008,
-        "shelf_life_display": "3 days"
+        "shelf_life_display": "3 days",
+        "notes": "Do not freeze"
     },
-    "sauces_fresh": {
+    "sauces_fresh_refrigerated": {
         "label": "Sauces (Fresh - Pesto, Alfredo)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.019,
-        "shelf_life_display": "7 days"
+        "shelf_life_display": "7 days",
+        "notes": "Freezing not recommended"
     },
-    "sausage_raw_cooked": {
+    "sausage_raw_cooked_refrigerated": {
         "label": "Sausage (Raw or Cooked)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1322,23 +1507,32 @@ food_items = {
         "shelf_life_years": 0.004,
         "shelf_life_display": "1-2 days"
     },
-    "sprouts": {
+    "sausage_raw_cooked_frozen": {
+        "label": "Sausage (Raw or Cooked)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.125,
+        "shelf_life_display": "1-2 months"
+    },
+    "sprouts_refrigerated": {
         "label": "Sprouts",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Cooler Items",
         "shelf_life_years": 0.0,
-        "shelf_life_display": "Expiration Date"
+        "shelf_life_display": "Expiration Date",
+        "notes": "Do not freeze"
     },
-    "sour_cream": {
+    "sour_cream_refrigerated": {
         "label": "Sour Cream",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.038,
-        "shelf_life_display": "14 days"
+        "shelf_life_display": "14 days",
+        "notes": "Freezes poorly"
     },
-    "tofu": {
+    "tofu_refrigerated": {
         "label": "Tofu",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1346,23 +1540,32 @@ food_items = {
         "shelf_life_years": 0.019,
         "shelf_life_display": "1 week"
     },
-    "whipped_cream_aerosol": {
+    "tofu_frozen": {
+        "label": "Tofu",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.5,
+        "shelf_life_display": "6 months"
+    },
+    "whipped_cream_aerosol_refrigerated": {
         "label": "Whipped Cream (Aerosol)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.077,
-        "shelf_life_display": "3-4 weeks"
+        "shelf_life_display": "3-4 weeks",
+        "notes": "Do not freeze"
     },
-    "whipped_topping_aerosol": {
+    "whipped_topping_aerosol_refrigerated": {
         "label": "Whipped Topping (Aerosol)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "sub_sub_category": "Dairy",
         "shelf_life_years": 0.25,
-        "shelf_life_display": "3 months"
+        "shelf_life_display": "3 months",
+        "notes": "Do not freeze"
     },
-    "whipped_topping_non_dairy_tub": {
+    "whipped_topping_non_dairy_tub_refrigerated": {
         "label": "Whipped Topping (Non-Dairy Tub)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1370,7 +1573,14 @@ food_items = {
         "shelf_life_years": 0.038,
         "shelf_life_display": "2 weeks"
     },
-    "yogurt_dairy_based": {
+    "whipped_topping_non_dairy_tub_frozen": {
+        "label": "Whipped Topping (Non-Dairy Tub)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 1.167,
+        "shelf_life_display": "14 months"
+    },
+    "yogurt_dairy_based_refrigerated": {
         "label": "Yogurt (Dairy-Based)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1378,7 +1588,14 @@ food_items = {
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
-    "yogurt_plant_based": {
+    "yogurt_dairy_based_frozen": {
+        "label": "Yogurt (Dairy-Based)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.125,
+        "shelf_life_display": "1-2 months"
+    },
+    "yogurt_plant_based_refrigerated": {
         "label": "Yogurt (Plant-Based)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1386,7 +1603,14 @@ food_items = {
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
-    "yogurt_drinks_pouches": {
+    "yogurt_plant_based_frozen": {
+        "label": "Yogurt (Plant-Based)",
+        "category": "Frozen",
+        "subcategory": "Dairy / Eggs / Cooler Items",
+        "shelf_life_years": 0.125,
+        "shelf_life_display": "1-2 months"
+    },
+    "yogurt_drinks_pouches_refrigerated": {
         "label": "Yogurt (Drinks, Pouches)",
         "category": "Refrigerated",
         "subcategory": "Dairy / Eggs / Cooler Items",
@@ -1394,351 +1618,324 @@ food_items = {
         "shelf_life_years": 0.032,
         "shelf_life_display": "10-14 days"
     },
-
-    # Dairy / Eggs / Cooler Items (Frozen)
-    "beverage_alternative": {
-        "label": "Beverage (Alternative - soy, rice, nut, oat)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Not recommended"
-    },
-    "butter": {
-        "label": "Butter",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 1.0,
-        "shelf_life_display": "1 year"
-    },
-    "buttermilk": {
-        "label": "Buttermilk",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Freezes poorly"
-    },
-    "cheese_trays": {
-        "label": "Cheese Trays",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "cheese_cottage": {
-        "label": "Cheese (Cottage)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Freezes poorly"
-    },
-    "cheese_cream": {
-        "label": "Cheese (Cream)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Freezes poorly"
-    },
-    "cheese_deli_sliced": {
-        "label": "Cheese (Deli Sliced)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.583,
-        "shelf_life_display": "6-8 months"
-    },
-    "cheese_hard": {
-        "label": "Cheese (Hard)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.583,
-        "shelf_life_display": "6-8 months"
-    },
-    "cheese_soft": {
-        "label": "Cheese (Soft)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.5,
-        "shelf_life_display": "6 months"
-    },
-    "cheese_processed": {
-        "label": "Cheese (Processed - sliced, shredded, string)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.5,
-        "shelf_life_display": "6 months"
-    },
-    "cheese_ricotta": {
-        "label": "Cheese (Ricotta)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Freezes poorly"
-    },
-    "coffee_creamer_dairy": {
-        "label": "Coffee Creamer (Dairy)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Follow label instructions"
-    },
-    "cream_half_and_half": {
-        "label": "Cream (Half & Half)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.333,
-        "shelf_life_display": "4 months, use for cooking"
-    },
-    "cream_heavy": {
-        "label": "Cream (Heavy)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.292,
-        "shelf_life_display": "3-4 months, use for cooking"
-    },
-    "cream_light": {
-        "label": "Cream (Light)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.292,
-        "shelf_life_display": "3-4 months, use for cooking"
-    },
-    "crust_pie_pizza": {
-        "label": "Crust (Pie or Pizza - ready to bake)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.167,
-        "shelf_life_display": "2 months"
-    },
-    "deli_lunch_meat": {
-        "label": "Deli or Lunch Meat (Retail Packed Only 90 Days)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.125,
-        "shelf_life_display": "1 – 2 months"
-    },
-    "dips_dairy_based": {
-        "label": "Dips (made with dairy, mayo, sour cream etc.)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "dough_biscuit": {
-        "label": "Dough (Biscuit)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "dough_bread_pizza": {
-        "label": "Dough (Bread or Pizza)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "dough_cookie": {
-        "label": "Dough (Cookie)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.208,
-        "shelf_life_display": "2-3 months"
-    },
-    "egg_nog": {
-        "label": "Egg Nog",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.5,
-        "shelf_life_display": "6 months"
-    },
-    "eggs_hardboiled": {
-        "label": "Eggs (Hardboiled)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "eggs_in_shell": {
-        "label": "Eggs (In Shell)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "eggs_pasteurized_substitute": {
-        "label": "Eggs (Pasteurized Carton Egg Substitute)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 1.0,
-        "shelf_life_display": "1 year"
-    },
-    "eggs_pasteurized_real": {
-        "label": "Eggs (Pasteurized Carton Real Eggs, Unopened)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 1.0,
-        "shelf_life_display": "1 year"
-    },
-    "eggs_whites_yolks": {
-        "label": "Eggs (Whites or Yolks)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 1.0,
-        "shelf_life_display": "12 months"
-    },
-    "hummus": {
-        "label": "Hummus",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.125,
-        "shelf_life_display": "1-2 months"
-    },
-    "juice_purchased_refrigerated": {
-        "label": "Juice (Purchased Refrigerated)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.75,
-        "shelf_life_display": "8-12 months"
-    },
-    "margarine": {
-        "label": "Margarine",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 1.0,
-        "shelf_life_display": "12 months"
-    },
-    "milk": {
-        "label": "Milk",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Can be frozen"
-    },
-    "pasta_fresh": {
-        "label": "Pasta (Fresh)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.167,
-        "shelf_life_display": "2 months"
-    },
-    "pesto_jar_tub": {
-        "label": "Pesto (Jar/Tub)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.583,
-        "shelf_life_display": "6-8 months"
-    },
-    "pico_de_gallo": {
-        "label": "Pico de Gallo",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "pudding_purchased_refrigerated": {
-        "label": "Pudding (Purchased Refrigerated)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "salad_greens": {
-        "label": "Salad Greens, Mixed Greens, Spinach Leaves",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "salad_dressing_refrigerated": {
-        "label": "Salad Dressing (Refrigerated)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "salsa_fresh": {
-        "label": "Salsa (Fresh)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "sauces_fresh": {
-        "label": "Sauces (Fresh - pesto, alfredo)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Freezing not recommended"
-    },
-    "sausage_raw_cooked": {
-        "label": "Sausage (Raw or Cooked)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.125,
-        "shelf_life_display": "1-2 months"
-    },
-    "sprouts": {
-        "label": "Sprouts",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "sour_cream": {
-        "label": "Sour Cream",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Freezes poorly"
-    },
-    "tofu": {
-        "label": "Tofu",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.5,
-        "shelf_life_display": "6 months"
-    },
-    "whipped_cream_aerosol": {
-        "label": "Whipped Cream (Aerosol)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "whipped_topping_aerosol": {
-        "label": "Whipped Topping (Aerosol)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0,
-        "shelf_life_display": "Do not freeze"
-    },
-    "whipped_topping_non_dairy_tub": {
-        "label": "Whipped Topping (Non-Dairy Tub)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 1.167,
-        "shelf_life_display": "14 months"
-    },
-    "yogurt_dairy_based": {
-        "label": "Yogurt (Dairy-Based)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.125,
-        "shelf_life_display": "1-2 months"
-    },
-    "yogurt_plant_based": {
-        "label": "Yogurt (Plant-Based)",
-        "category": "Frozen",
-        "subcategory": "Dairy / Eggs / Cooler Items",
-        "shelf_life_years": 0.125,
-        "shelf_life_display": "1-2 months"
-    },
-    "yogurt_drinks_pouches": {
+    "yogurt_drinks_pouches_frozen": {
         "label": "Yogurt (Drinks, Pouches)",
         "category": "Frozen",
         "subcategory": "Dairy / Eggs / Cooler Items",
         "shelf_life_years": 0.125,
         "shelf_life_display": "1-2 months"
     },
+
+
+
+
+
+
+    # Dairy / Eggs / Cooler Items (Frozen)
+    # "beverage_alternative_frozen": {
+    #     "label": "Beverage (Alternative - soy, rice, nut, oat)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Not recommended"
+    # },
+    # "butter_frozen": {
+    #     "label": "Butter",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 1.0,
+    #     "shelf_life_display": "1 year"
+    # },
+    # "buttermilk_frozen": {
+    #     "label": "Buttermilk",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Freezes poorly"
+    # },
+    # "cheese_trays_frozen": {
+    #     "label": "Cheese Trays",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "cheese_cottage_frozen": {
+    #     "label": "Cheese (Cottage)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Freezes poorly"
+    # },
+    # "cheese_cream_frozen": {
+    #     "label": "Cheese (Cream)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Freezes poorly"
+    # },
+    # "cheese_deli_sliced_frozen": {
+    #     "label": "Cheese (Deli Sliced)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.583,
+    #     "shelf_life_display": "6-8 months"
+    # },
+    # "cheese_hard_frozen": {
+    #     "label": "Cheese (Hard)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.583,
+    #     "shelf_life_display": "6-8 months"
+    # },
+    # "cheese_soft_frozen": {
+    #     "label": "Cheese (Soft)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.5,
+    #     "shelf_life_display": "6 months"
+    # },
+    # "cheese_processed_frozen": {
+    #     "label": "Cheese (Processed - sliced, shredded, string)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.5,
+    #     "shelf_life_display": "6 months"
+    # },
+    # "cheese_ricotta_frozen": {
+    #     "label": "Cheese (Ricotta)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Freezes poorly"
+    # },
+    # "coffee_creamer_dairy_frozen": {
+    #     "label": "Coffee Creamer (Dairy)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Follow label instructions"
+    # },
+    # "cream_half_and_half_frozen": {
+    #     "label": "Cream (Half & Half)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.333,
+    #     "shelf_life_display": "4 months, use for cooking"
+    # },
+    # "cream_heavy_frozen": {
+    #     "label": "Cream (Heavy)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.292,
+    #     "shelf_life_display": "3-4 months, use for cooking"
+    # },
+    # "cream_light_frozen": {
+    #     "label": "Cream (Light)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.292,
+    #     "shelf_life_display": "3-4 months, use for cooking"
+    # },
+    # "crust_pie_pizza_frozen": {
+    #     "label": "Crust (Pie or Pizza - ready to bake)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.167,
+    #     "shelf_life_display": "2 months"
+    # },
+    # "deli_lunch_meat_frozen": {
+    #     "label": "Deli or Lunch Meat (Retail Packed Only 90 Days)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.125,
+    #     "shelf_life_display": "1-2 months"
+    # },
+    # "dips_dairy_based_frozen": {
+    #     "label": "Dips (made with dairy, mayo, sour cream etc.)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "dough_biscuit_frozen": {
+    #     "label": "Dough (Biscuit)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "dough_bread_pizza_frozen": {
+    #     "label": "Dough (Bread or Pizza)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "dough_cookie_frozen": {
+    #     "label": "Dough (Cookie)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.208,
+    #     "shelf_life_display": "2-3 months"
+    # },
+    # "egg_nog_frozen": {
+    #     "label": "Egg Nog",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.5,
+    #     "shelf_life_display": "6 months"
+    # },
+    # "eggs_hardboiled_frozen": {
+    #     "label": "Eggs (Hardboiled)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "eggs_in_shell_frozen": {
+    #     "label": "Eggs (In Shell)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "eggs_pasteurized_substitute_frozen": {
+    #     "label": "Eggs (Pasteurized Carton Egg Substitute)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 1.0,
+    #     "shelf_life_display": "1 year"
+    # },
+    # "eggs_pasteurized_real_frozen": {
+    #     "label": "Eggs (Pasteurized Carton Real Eggs, Unopened)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 1.0,
+    #     "shelf_life_display": "1 year"
+    # },
+    # "eggs_whites_yolks_frozen": {
+    #     "label": "Eggs (Whites or Yolks)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 1.0,
+    #     "shelf_life_display": "12 months"
+    # },
+    # "hummus_frozen": {
+    #     "label": "Hummus",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.125,
+    #     "shelf_life_display": "1-2 months"
+    # },
+    # "juice_purchased_refrigerated_frozen": {
+    #     "label": "Juice (Purchased Refrigerated)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.75,
+    #     "shelf_life_display": "8-12 months"
+    # },
+    # "margarine_frozen": {
+    #     "label": "Margarine",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 1.0,
+    #     "shelf_life_display": "12 months"
+    # },
+    # "milk_frozen": {
+    #     "label": "Milk",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Can be frozen"
+    # },
+    # "pasta_fresh_frozen": {
+    #     "label": "Pasta (Fresh)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.167,
+    #     "shelf_life_display": "2 months"
+    # },
+    # "pesto_jar_tub_frozen": {
+    #     "label": "Pesto (Jar/Tub)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0.583,
+    #     "shelf_life_display": "6-8 months"
+    # },
+    # "pico_de_gallo_frozen": {
+    #     "label": "Pico de Gallo",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "pudding_purchased_refrigerated_frozen": {
+    #     "label": "Pudding (Purchased Refrigerated)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "salad_greens_frozen": {
+    #     "label": "Salad Greens, Mixed Greens, Spinach Leaves",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "salad_dressing_refrigerated_frozen": {
+    #     "label": "Salad Dressing (Refrigerated)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "salsa_fresh_frozen": {
+    #     "label": "Salsa (Fresh)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "sauces_fresh_frozen": {
+    #     "label": "Sauces (Fresh - pesto, alfredo)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Freezing not recommended"
+    # },
+    
+    # "sprouts_frozen": {
+    #     "label": "Sprouts",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "sour_cream_frozen": {
+    #     "label": "Sour Cream",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Freezes poorly"
+    # # },
+
+    # "whipped_cream_aerosol_frozen": {
+    #     "label": "Whipped Cream (Aerosol)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    # "whipped_topping_aerosol_frozen": {
+    #     "label": "Whipped Topping (Aerosol)",
+    #     "category": "Frozen",
+    #     "subcategory": "Dairy / Eggs / Cooler Items",
+    #     "shelf_life_years": 0,
+    #     "shelf_life_display": "Do not freeze"
+    # },
+    
 
 
     # Produce - Cut Varieties
@@ -2036,28 +2233,28 @@ food_items = {
         "shelf_life_years": 0.167,
         "shelf_life_display": "2 months"
     },
-    "desserts_frozen_baked_goods": {
+    "desserts_frozen_baked_goods_frozen": {
         "label": "Desserts (Frozen Baked Goods)",
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
         "shelf_life_years": 0.292,
         "shelf_life_display": "3-4 months"
     },
-    "desserts_frozen_cream_pies": {
+    "desserts_frozen_cream_pies_frozen": {
         "label": "Desserts (Frozen Cream Pies)",
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
         "shelf_life_years": 0.125,
         "shelf_life_display": "1-2 months"
     },
-    "dinners_pies_casseroles_shrimp_ham_pork_sausage": {
+    "dinners_pies_casseroles_shrimp_ham_pork_sausage_frozen": {
         "label": "Dinners (Pies, Casseroles, Shrimp, Ham, Pork, Sausage)",
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
         "shelf_life_years": 0.292,
         "shelf_life_display": "3-4 months"
     },
-    "dinners_beef_turkey_chicken_fish": {
+    "dinners_beef_turkey_chicken_fish_frozen": {
         "label": "Dinners (Beef, Turkey, Chicken, Fish)",
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
@@ -2069,7 +2266,8 @@ food_items = {
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
         "shelf_life_years": 0.083,
-        "shelf_life_display": "1 month"
+        "shelf_life_display": "1 month",
+        "notes": "Longer storage inactives yeast, weakens gluten"
     },
     "dough_cookie_frozen": {
         "label": "Dough (Cookie)",
@@ -2083,7 +2281,8 @@ food_items = {
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
         "shelf_life_years": 1.0,
-        "shelf_life_display": "1 year"
+        "shelf_life_display": "1 year",
+        "notes": "Assumes purchased froze, never opened, never thawed"
     },
     "fish_breaded_frozen": {
         "label": "Fish (Breaded)",
@@ -2148,14 +2347,14 @@ food_items = {
         "shelf_life_years": 0.75,
         "shelf_life_display": "9 months"
     },
-    "ice_pops": {
+    "ice_pops_frozen": {
         "label": "Ice Pops",
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
         "shelf_life_years": 0.5,
         "shelf_life_display": "6 months"
     },
-    "ice_cream": {
+    "ice_cream_frozen": {
         "label": "Ice Cream",
         "category": "Frozen",
         "subcategory": "Items Purchased Frozen",
@@ -2270,70 +2469,77 @@ food_items = {
 
 
     # Fresh Meats - Refrigerated
-    "fish_finned_fatty_salmon_tuna_fresh": {
+    "fish_finned_fatty_salmon_tuna_fresh_refrigerated": {
         "label": "Fish (Finned, Fatty - Salmon, Tuna)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.005,
         "shelf_life_display": "2 days"
     },
-    "fish_finned_lean_cod_halibut_fresh": {
+    "fish_finned_lean_cod_halibut_fresh_refrigerated": {
         "label": "Fish (Finned, Lean - Cod, Halibut)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.005,
         "shelf_life_display": "2 days"
     },
-    "fish_finned_lean_pollock_perch_trout_fresh": {
+    "fish_finned_lean_pollock_perch_trout_fresh_refrigerated": {
         "label": "Fish (Finned, Lean - Pollock, Perch, Trout)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.005,
         "shelf_life_display": "2 days"
     },
-    "shellfish_shrimp_cooked_cocktail": {
+    "shellfish_shrimp_cooked_cocktail_refrigerated": {
         "label": "Shellfish (Shrimp - Cooked/Cocktail)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.01,
         "shelf_life_display": "3-4 days"
     },
-    "shellfish_shrimp_raw_fresh": {
+    "shellfish_shrimp_raw_fresh_refrigerated": {
         "label": "Shellfish (Shrimp - Raw)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.005,
         "shelf_life_display": "2 days"
     },
-    "crab_canned": {
+    "crab_canned_refrigerated": {
         "label": "Crab (Canned)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.5,
         "shelf_life_display": "6 months unopened; 5-7 days opened"
     },
-    "crab_in_shell_whole_legs_claws": {
+    "crab_canned_frozen": {
+        "label": "Crab (Canned, Frozen)",
+        "category": "Frozen",
+        "subcategory": "Fresh Meats",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Do not freeze"
+    },
+    "crab_in_shell_whole_legs_claws_refrigerated": {
         "label": "Crab (In Shell - Whole, Legs, Claws)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.011,
         "shelf_life_display": "3-5 days"
     },
-    "shellfish_shucked_oysters_clams_mussels_fresh": {
+    "shellfish_shucked_oysters_clams_mussels_fresh_refrigerated": {
         "label": "Shellfish (Shucked - Oysters, Clams, Mussels)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.004,
         "shelf_life_display": "1-2 days"
     },
-    "lobster_tails_raw": {
+    "lobster_tails_raw_refrigerated": {
         "label": "Lobster Tails (Raw)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
         "shelf_life_years": 0.012,
         "shelf_life_display": "4-5 days"
     },
-    "scallops_raw": {
+    "scallops_raw_refrigerated": {
         "label": "Scallops (Raw)",
         "category": "Refrigerated",
         "subcategory": "Fresh Meats",
@@ -2405,22 +2611,38 @@ food_items = {
         "shelf_life_years": 0.375,
         "shelf_life_display": "3-6 months"
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# check out this section against the table
     # Cooked Fish/Seafood
-    "fish_finned_fatty_salmon_tuna_cooked": {
+    "fish_finned_fatty_salmon_tuna_cooked_refrigerated": {
         "label": "Fish (Finned, Fatty - Salmon, Tuna, Cooked)",
         "category": "Refrigerated",
         "subcategory": "Cooked Fish/Seafood",
         "shelf_life_years": 0.016,
         "shelf_life_display": "5-7 days"
     },
-    "fish_finned_lean_cod_halibut_cooked": {
+    "fish_finned_lean_cod_halibut_cooked_refrigerated": {
         "label": "Fish (Finned, Lean - Cod, Halibut, Cooked)",
         "category": "Refrigerated",
         "subcategory": "Cooked Fish/Seafood",
         "shelf_life_years": 0.016,
         "shelf_life_display": "5-7 days"
     },
-    "shellfish_shrimp_cooked_cocktail_cooked": {
+    "shellfish_shrimp_cooked_cocktail_cooked_refrigerated": {
         "label": "Shellfish (Shrimp - Cooked/Cocktail)",
         "category": "Refrigerated",
         "subcategory": "Cooked Fish/Seafood",
@@ -2449,57 +2671,74 @@ food_items = {
         "shelf_life_display": "3-6 months"
     },
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # Raw Meats
-    "beef_roasts": {
+    "beef_roasts_refrigerated": {
         "label": "Beef Roasts",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
         "shelf_life_years": 0.011,
         "shelf_life_display": "3-5 days"
     },
-    "beef_steaks": {
+    "beef_steaks_refrigerated": {
         "label": "Beef Steaks",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
         "shelf_life_years": 0.011,
         "shelf_life_display": "3-5 days"
     },
-    "pork_roasts": {
+    "pork_roasts_refrigerated": {
         "label": "Pork Roasts",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
         "shelf_life_years": 0.011,
         "shelf_life_display": "3-5 days"
     },
-    "pork_chops": {
+    "pork_chops_refrigerated": {
         "label": "Pork Chops",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
         "shelf_life_years": 0.011,
         "shelf_life_display": "3-5 days"
     },
-    "lamb_roasts": {
+    "lamb_roasts_refrigerated": {
         "label": "Lamb Roasts",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
         "shelf_life_years": 0.011,
         "shelf_life_display": "3-5 days"
     },
-    "lamb_steaks_chops": {
+    "lamb_steaks_chops_refrigerated": {
         "label": "Lamb Steaks/Chops",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
         "shelf_life_years": 0.011,
         "shelf_life_display": "3-5 days"
     },
-    "poultry_chicken_turkey_whole": {
+    "poultry_chicken_turkey_whole_refrigerated": {
         "label": "Poultry (Chicken or Turkey, Whole)",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
         "shelf_life_years": 0.005,
         "shelf_life_display": "2 days"
     },
-    "ground_meats_beef_pork_lamb_poultry": {
+    "ground_meats_beef_pork_lamb_poultry_refrigerated": {
         "label": "Ground Meats (Beef, Pork, Lamb, Poultry)",
         "category": "Refrigerated",
         "subcategory": "Raw Meats",
@@ -2814,6 +3053,14 @@ food_items = {
         "shelf_life_years": 0.25,
         "shelf_life_display": "3 months"
     },
+    "hummus_pasteurized_frozen": {
+        "label": "Hummus (Pasteurized)",
+        "category": "Frozen",
+        "subcategory": "Prepared Foods",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Do not freeze"
+    },
+
     "hummus_with_preservatives_refrigerated": {
         "label": "Hummus (With Preservatives)",
         "category": "Refrigerated",
@@ -2821,6 +3068,14 @@ food_items = {
         "shelf_life_years": 0.167,
         "shelf_life_display": "2 months"
     },
+    "hummus_with_preservatives_frozen": {
+        "label": "Hummus (With Preservatives)",
+        "category": "Frozen",
+        "subcategory": "Prepared Foods",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Do not freeze"
+    },
+
     "hummus_traditional_no_preservatives_refrigerated": {
         "label": "Hummus (Traditional, No Preservatives, Not Pasteurized)",
         "category": "Refrigerated",
@@ -2828,6 +3083,15 @@ food_items = {
         "shelf_life_years": 0.019,
         "shelf_life_display": "7 days"
     },
+
+    "hummus_traditional_no_preservatives_frozen": {
+        "label": "Hummus (Traditional, No Preservatives, Not Pasteurized)",
+        "category": "Frozen",
+        "subcategory": "Prepared Foods",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Do not freeze"
+    },
+
     "main_dishes_meals_refrigerated": {
         "label": "Main Dishes, Meals",
         "category": "Refrigerated",
@@ -2877,6 +3141,14 @@ food_items = {
         "shelf_life_years": 0.013,
         "shelf_life_display": "3-5 days"
     },
+    "salads_prepared_macaroni_egg_potato_chicken_tuna_frozen": {
+        "label": "Salads (Prepared - Macaroni, Egg, Potato, Chicken, Tuna, etc.)",
+        "category": "Frozen",
+        "subcategory": "Prepared Foods",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Do not freeze"
+    },
+
     "sandwiches_grab_go_retail_packaged_refrigerated": {
         "label": "Sandwiches (Grab & Go, Retail Packaged)",
         "category": "Refrigerated",
@@ -2884,12 +3156,28 @@ food_items = {
         "shelf_life_years": 0.005,
         "shelf_life_display": "2 days"
     },
+
+    "sandwiches_grab_go_retail_packaged_frozen": {
+        "label": "Sandwiches (Grab & Go, Retail Packaged)",
+        "category": "Frozen",
+        "subcategory": "Prepared Foods",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Do not freeze"
+    },
+
     "sauces_egg_based_hollandaise_refrigerated": {
         "label": "Sauces (Egg-Based - Hollandaise, etc.)",
         "category": "Refrigerated",
         "subcategory": "Prepared Foods",
         "shelf_life_years": 0.027,
         "shelf_life_display": "10 days"
+    },
+    "sauces_egg_based_hollandaise_frozen": {
+        "label": "Sauces (Egg-Based - Hollandaise, etc.)",
+        "category": "Frozen",
+        "subcategory": "Prepared Foods",
+        "shelf_life_years": 0,
+        "shelf_life_display": "Do not freeze"
     },
     "side_dishes_cooked_vegetables_refrigerated": {
         "label": "Side Dishes (Cooked Vegetables)",
